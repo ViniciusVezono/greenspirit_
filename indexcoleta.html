@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assents\css\stylecoleta.css">
+    <title>Solicitando Coleta</title>
+</head>
+<body>
+
+    <section>
+        <header>
+            <div class="logo">
+                <h2>Green<span>Spirit</span></h2>
+            </div>
+            <nav class="navegation">
+                <ul>
+                    <li><a href="index.html">Voltar ao início</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="about-text">
+                <h2>Como solicitar a coleta em minha casa?</h2>
+                <p>Para direcionar o coletor de recicláveis até sua casa, é de extrema importância que 
+                    você entenda que isso poderá conter um custo, ele poderá ser informado posteriormente. 
+                    <br> Ao rolar para baixo nessa mesma tela,
+                    você encontrará um formulário onde poderá preencher seus dados e os tipos de reciláveis que possui para a coleta.
+                    Após enviar as informações, eviaremos um e-mail confirmando a solicitação e a mesma ficará disponível em seu 
+                    perfil de usuário(importante que o e-mail de solicitação de coleta seja o mesmo de login de usuário). 
+                    Assim, direcionaremos o coletor mais próximo a você para realizar a coleta, de forma segura 
+                    e bem feita. SOMENTE EM RIBEIRÃO PRETO.
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="formulario">
+        <div class="content">
+            <h1>Solicitando Coleta em casa:</h1>
+            <form id="form">
+                
+                <div>
+                    <input type="text" placeholder="Digite seu nome completo" class="inputs required" oninput="nameValidate()">
+                    <span class="span-required">Nome deve ter no mínimo 3 caracteres.</span>
+                </div>
+                <div>
+                    <input type="text" placeholder="Digite seu e-mail de usuário" class="inputs required" oninput="emailValidate()">
+                    <span class="span-required">O e-mail deve ser válido.</span>
+                </div>
+                <div>
+                    <input type="text" placeholder="Informe o CEP de sua Residência." class="inputs required" oninput="cepValidate()">
+                    <span class="span-required">o CEP deve conter 8 caracteres numéricos(sem traços).</span>
+                </div>
+                <div>
+                    <input type="text" placeholder="Informe seu endereço. Exemplo: Rua Conceição, 890" class="inputs required" oninput="enderecoValidate()">
+                    <span class="span-required">Informe um endereço válido.</span>
+                </div>
+                <p>Quais recicláveis serão coletados?</p>
+
+                <div class="box-select">
+                    <div>
+                        <input type="checkbox" id="papel" value="papel" name="reciclaveis">
+                        <label for="html">Papel</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="metal" value="metal" name="reciclaveis">
+                        <label for="css">Metal</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="plastico" value="plastico" name="reciclaveis">
+                        <label for="js">Plástico</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="vidro" value="vidro" name="reciclaveis">
+                        <label for="php">Vidro</label>
+                    </div>
+                </div>
+
+                <button type="submit">Enviar</button>
+
+            </form>
+    </section>
+</body>
+<script>
+    const form   = document.getElementById('form');
+    const campos = document.querySelectorAll('.required');
+    const spans  = document.querySelectorAll('.span-required');
+    const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+        form.addEventListener('submit', (event) => 
+        {
+            event.preventDefault();
+            nameValidate();
+            emailValidate();
+            cepValidate();
+            enderecoValidate();
+        });
+    
+
+    function setError(indexcoleta)
+    {
+        campos[indexcoleta].style.border = '2px solid #e63636';
+        spans[indexcoleta].style.display = 'block';
+    }
+
+    function removeError(indexcoleta)
+    {
+        campos[indexcoleta].style.border = '';
+        spans[indexcoleta].style.display = 'none';
+    }
+
+    function nameValidate()
+    {
+        if(campos[0].value.length < 3)
+        {
+            setError(0);
+        }
+        else
+        {
+            removeError(0);
+        }
+    }
+
+    function emailValidate()
+    {
+        if(!emailRegex.test(campos[1].value))
+        {
+            setError(1);
+        }
+        else
+        {
+            removeError(1);
+        }
+    }
+
+    function cepValidate()
+    {
+        if(campos[2].value.length !=8)
+        {
+            setError(2);
+        }
+        else
+        {
+            removeError(2);
+        }
+    }
+    function enderecoValidate()
+    {
+        if(campos[3].value.length < 10)
+        {
+            setError(3);
+        }
+        else
+        {
+            removeError(3);
+        }
+    }
+
+</script>
+
+</html>

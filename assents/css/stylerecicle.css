@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: linear-gradient(#14220b, #0e0d0d);
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+span{
+    color:rgb(104, 197, 12);
+}
+header .logo{
+    position: relative;
+    max-width: 50px;
+}
+header .logo h2{
+    color: #fff;
+}
+header .navegation ul{
+    position: relative;
+    display: flex;
+}
+header .navegation  li{
+    list-style: none;
+}
+header .navegation li a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 19px;
+    margin-left: 50px;
+}
+header .navegation ul li a:hover
+{
+    color:#2f9706;
+    transition: .4s;
+}
+.main img
+    {
+        height: auto;
+        width: 600px;  
+        border-radius: 10px;
+    }
+
+    .about-text 
+    {
+       width: 550px; 
+    }
+
+    .main
+    {
+        padding-top: 7%;
+        width: 1130px;
+        max-width: 95%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .about-text h2
+    {
+        color: rgb(255, 253, 253);
+        font-size: 55px;
+        text-transform: capitalize;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .about-text p
+    {
+        color: white;
+        letter-spacing: 1px;
+        line-height: 28px;
+        font-size: 20px;
+        margin-bottom: 45px;
+
+    }
+    .papel img
+    {
+        height: auto;
+        width: 400px;  
+        border-radius: 10px;
+    }
+    .papel
+    {
+        padding-top: 0;
+        width: 1000px;
+        max-width: 100%;
+        min-height: vh;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
